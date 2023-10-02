@@ -6,7 +6,7 @@ class Checker(object):
     def check(self):
         message ={"invalidLength":"Password must be at least 10 charaxters long. Please try again!",
                   "missingLowercase":"Password is missing a lower case alpha character. Please try again!",
-                  "missingUppercase":"Password is missing a lower case alpha character. Please try again!",
+                  "missingUppercase":"Password is missing an upper case alpha character. Please try again!",
                   "missingNumeric": "Password is missing a numeric value. Please try again!",
                   "missingSpecialCharacter":"Password is missing special character. Please try again!",
                    "validPassword":"Valid password>"}
@@ -19,7 +19,7 @@ class Checker(object):
              return message["missingUppercase"]
         elif not re.search("[0-9]", self.password):
              return message["missingNumeric"]
-        elif not re.search("[_@$]" , self.password):
+        elif not re.search("[_@$#]" , self.password):
              return message["missingSpecialCharacter"]
         elif re.search("\s" , self.password):
              return message["invalidLength"]
