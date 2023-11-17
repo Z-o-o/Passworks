@@ -1,10 +1,14 @@
 from PasswordChecker import Checker
+from PasswordGenerator import generator
 def main():
   while True:
-       passord = input("Enter your passwaord (or just hit enter with no text to quit): ")
-       if passord == '':
+       password = input("Enter your passwaord (hit enter with no text to quit or type \"generate\" to auto-generate a strong password): ")
+       if password == '':
            exit(1)
-       checker = Checker(passord)
+       if password == 'generate':
+           print("New Password: " + str(generator(100, 100)) + "\n")
+           exit(0)
+       checker = Checker(password)
        results = checker.check()
        print(results)
          
