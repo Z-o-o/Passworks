@@ -4,12 +4,12 @@ class Checker(object):
         self.password =password
         
     def check(self):
-        message ={"invalidLength":"Password must be at least 10 charaxters long. Please try again!",
-                  "missingLowercase":"Password is missing a lower case alpha character. Please try again!",
-                  "missingUppercase":"Password is missing an upper case alpha character. Please try again!",
-                  "missingNumeric": "Password is missing a numeric value. Please try again!",
-                  "missingSpecialCharacter":"Password is missing special character. Please try again!",
-                   "validPassword":"Valid password>"}
+        message ={"invalidLength":"Password must be at least 10 charaxters long.",
+                  "missingLowercase":"Password is missing a lower case alpha character.",
+                  "missingUppercase":"Password is missing an upper case alpha character.",
+                  "missingNumeric": "Password is missing a numeric value.",
+                  "missingSpecialCharacter":"Password is missing special character.",
+                   "validPassword":"Valid password"}
         if len(self.password) < 10:
             self.invalidLength = False
             return message["invalidLength"]
