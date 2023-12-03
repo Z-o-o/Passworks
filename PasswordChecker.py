@@ -4,13 +4,13 @@ class Checker(object):
         self.password =password
         
     def check(self):
-        message ={"invalidLength":"Password must be at least 10 charaxters long.",
+        message ={"invalidLength":"Password must be at least 10 characters long.",
                   "missingLowercase":"Password is missing a lower case alpha character.",
                   "missingUppercase":"Password is missing an upper case alpha character.",
                   "missingNumeric": "Password is missing a numeric value.",
                   "missingSpecialCharacter":"Password is missing special character.",
                    "validPassword":"Valid password"}
-        if len(self.password) < 10:
+        if len(self.password) < 14:
             self.invalidLength = False
             return message["invalidLength"]
         elif not re.search("[a-z]", self.password):
@@ -25,3 +25,5 @@ class Checker(object):
              return message["invalidLength"]
         else:
              return message["validPassword"]
+
+ 
