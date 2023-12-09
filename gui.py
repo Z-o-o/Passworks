@@ -15,7 +15,7 @@ def analyze_password(password):
   if check != "Valid password":
     messagebox.showerror('Error', check)
   else:
-    messagebox.showinfo("Info", check)
+    messagebox.showinfo("Info", check + ": " +str(Checker(password).analyze_password()))
   return
 
 def generate_password():
