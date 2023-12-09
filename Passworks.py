@@ -11,6 +11,9 @@ def main():
        checker = Checker(password)
        results = checker.check()
        print(results)
+       if(results =="Valid password"):
+           pwd_strength = checker.analyze_password()
+           print("Your password is: ", pwd_strength)
          
     
 if __name__ == '__main__':
